@@ -1,0 +1,10 @@
+rm -f $HOME/results
+for loop in 1 2 3 4 5
+do
+echo $loop,"--------------------------------">> $HOME/results
+sudo rm /var/cache/nfdump/*
+python get_them.py
+sleep 300
+$HOME/sts >> $HOME/results
+done
+
